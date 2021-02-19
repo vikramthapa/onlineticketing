@@ -54,7 +54,7 @@ public class ParaglidingPilotServiceImpl implements ParaglidingPilotService {
                 .lastName("Gotham")
                 .expertise("APPI Master SIV, acro, XC")
                 .male(false)
-                .venue("Sarangkot")
+                .venue("Sirkot")
                 .location("Pokhara")
                 .imageUrl("pilot3")
                 .about("To the heated blueberries add ginger, raspberries, worcestershire sauce and shredded bagel.To the heated blueberries add ginger, raspberries, worcestershire sauce and shredded bagel.")
