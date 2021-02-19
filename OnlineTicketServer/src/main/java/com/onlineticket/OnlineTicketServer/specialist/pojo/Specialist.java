@@ -22,12 +22,13 @@ class Specialist {
     private Long spid;
     private String firstName;
     private String lastName;
+    private Boolean male;
     private String qualification;
     private String expertise;
     private String location;
-    private int timeFrom;
-    private int timeTo;
-    private int rating;
+    private Integer timeFrom;
+    private Integer timeTo;
+    private Integer rating;
     private String about;
     private String imageUrl;
 }
