@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Builder
 @AllArgsConstructor
@@ -21,8 +22,17 @@ public class Payment {
     @ManyToOne
     private Reservation reservation;
 
+    //Like ESEWA, IMEPAY etc.
+    private String onlineSource;
+
+    private Date paidTime;
+
     private Double rate;
-    private Integer noOfTickets;
+
+    private Integer hours;
+
+    private Integer minute;
+
     private Double AmountPayable;
 
 }
