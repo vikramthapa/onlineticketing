@@ -24,11 +24,12 @@ class Specialist {
     private String lastName;
     private Boolean male;
     private String qualification;
+    private String seminarTitle;
     private String expertise;
+    private String venue;
     private String location;
     private Integer timeFrom;
     private Integer timeTo;
-    private Integer rating;
     private String about;
     private String imageUrl;
 }

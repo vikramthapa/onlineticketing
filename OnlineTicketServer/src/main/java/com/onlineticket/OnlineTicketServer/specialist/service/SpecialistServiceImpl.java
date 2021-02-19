@@ -23,9 +23,8 @@ public class SpecialistServiceImpl implements  SpecialistService{
     SpecialistRepository repository;
 
     @PostConstruct // These doctors are fed for Demo purposes
-    private void runAfter()
+    private void runBefore()
     {
-
         ArrayList<Specialist> doctors = new ArrayList<>();
 
         //Dummy Doctor 1
