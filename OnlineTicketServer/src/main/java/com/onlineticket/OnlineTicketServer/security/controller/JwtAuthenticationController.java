@@ -4,6 +4,7 @@ import com.onlineticket.OnlineTicketServer.security.config.JwtRequest;
 import com.onlineticket.OnlineTicketServer.security.config.JwtResponse;
 import com.onlineticket.OnlineTicketServer.security.config.JwtTokenHandler;
 import com.onlineticket.OnlineTicketServer.security.service.JwtUserDetailService;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 
+@Log4j2
 @RestController
 @CrossOrigin
 public class JwtAuthenticationController {
@@ -32,8 +34,12 @@ public class JwtAuthenticationController {
     @Autowired
     private JwtUserDetailService userDetailService;
 
+    @CrossOrigin
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
+
+        log.info(">>>>>>>>>>>>> user: {} and password: {}",authenticationRequest.getUsername(),authenticationRequest.getPassword());
+        log.info("Credentials: "+authenticationRequest.toString());
 
         authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
