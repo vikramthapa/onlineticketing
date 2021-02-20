@@ -22,7 +22,6 @@ public class Payment {
     @ManyToOne
     private Reservation reservation;
 
-    //Like ESEWA, IMEPAY etc.
     private String onlineSource;
 
     private Date paidTime;

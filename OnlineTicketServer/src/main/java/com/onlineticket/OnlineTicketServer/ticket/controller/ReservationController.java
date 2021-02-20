@@ -1,5 +1,6 @@
 package com.onlineticket.OnlineTicketServer.ticket.controller;
 
+import com.onlineticket.OnlineTicketServer.ticket.pojo.Book;
 import com.onlineticket.OnlineTicketServer.ticket.pojo.Reservation;
 import com.onlineticket.OnlineTicketServer.ticket.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,8 @@ public class ReservationController {
     ReservationService service;
 
     @PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Reservation> bookTicket(@RequestBody Reservation reservation) {
-        Reservation ticket = service.save(reservation);
+    public ResponseEntity<Reservation> bookTicket(@RequestBody Book book) {
+        Reservation ticket = service.save(book);
         if(ticket!=null)
             return new ResponseEntity<>(ticket, HttpStatus.CREATED);
         else

@@ -24,7 +24,7 @@ public class Reservation {
     private ParaglidingPilot preferredPilot;
 
     private String firstName;
-    private String LastName;
+    private String lastName;
     private String contact;
     private String email;
     private String gender;
