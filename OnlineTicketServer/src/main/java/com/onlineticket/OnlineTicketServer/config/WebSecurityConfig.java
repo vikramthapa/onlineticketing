@@ -52,7 +52,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/api/ticket/create").permitAll()
                 .antMatchers("/api/payment/create").permitAll()
-                //.antMatchers("/api/pilot/all").permitAll()
+                .antMatchers("/api/pilot/all").permitAll()
                 .antMatchers("/api/payment/create").permitAll()
                 .antMatchers("/authenticate").permitAll()
                 .anyRequest()
