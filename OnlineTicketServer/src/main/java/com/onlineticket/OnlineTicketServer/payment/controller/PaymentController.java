@@ -1,6 +1,7 @@
 package com.onlineticket.OnlineTicketServer.payment.controller;
 
 import com.onlineticket.OnlineTicketServer.payment.pojo.Payment;
+import com.onlineticket.OnlineTicketServer.payment.pojo.Settlement;
 import com.onlineticket.OnlineTicketServer.payment.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,8 +20,8 @@ public class PaymentController {
     PaymentService service;
 
     @PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Payment> executePayment(@RequestBody Payment reservation) {
-        Payment payment = service.save(reservation);
+    public ResponseEntity<Payment> executePayment(@RequestBody Settlement settlement) {
+        Payment payment = service.save(settlement);
         if(payment!=null)
             return new ResponseEntity<>(payment, HttpStatus.CREATED);
         else

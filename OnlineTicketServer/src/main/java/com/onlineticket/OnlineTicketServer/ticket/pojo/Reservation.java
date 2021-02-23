@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
+import lombok.Data;
 import javax.persistence.*;
 import java.util.Date;
 
@@ -14,7 +15,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Entity
 @Table
-public class Reservation {
+public @Data class Reservation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

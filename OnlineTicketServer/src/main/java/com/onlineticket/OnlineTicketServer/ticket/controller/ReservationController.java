@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @CrossOrigin
 @RestController
 @RequestMapping("/api/ticket")
@@ -20,10 +21,12 @@ public class ReservationController {
     ReservationService service;
 
     @PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Reservation> bookTicket(@RequestBody Book book) {
+    public ResponseEntity<Long> bookTicket(@RequestBody Book book) {
+        
+        System.out.println("Book data: "+ book.toString());
         Reservation ticket = service.save(book);
         if(ticket!=null)
-            return new ResponseEntity<>(ticket, HttpStatus.CREATED);
+            return new ResponseEntity<>(ticket.getId(), HttpStatus.CREATED);
         else
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }

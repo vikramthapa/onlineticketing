@@ -1,0 +1,81 @@
+<div class="col-md-6 d-flex justify-content-start" style="margin:60px 0 0 20px;">
+<div class="row" style="background-color:cornsilk;">
+<h2 style="margin-top:10px;">PARAFLIGHT BOOKING</h2>
+<form class="row g-3"  (ngSubmit)="bookMyTicket()" [formGroup]="bookingData" style="margin-bottom:100px">
+
+    <div class="col-md-12">
+      <label for="choosePilot" class="form-label">Choose Our Pilot:</label>
+      <select id="choosePilot" class="form-select" formControlName="pilotId">
+        <option *ngFor="let pilot of pilots" value={{pilot.ptid}}>{{pilot.firstName}} {{pilot.firstName}}</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label for="firstName" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="firstName" formControlName="firstName">
+    </div>
+    <div class="col-md-6">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input type="text" class="form-control" id="lastName" formControlName="lastName">
+    </div>
+    <div class="col-md-6">
+      <label for="contact" class="form-label">Contact</label>
+      <input type="text" class="form-control" id="inputEmail4" formControlName="contact">
+    </div>
+    <div class="col-md-6">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" formControlName="email">
+    </div>
+    
+    <div class="col-md-4">
+      <label for="gender" class="form-label">Gender</label>
+      <select id="gender" class="form-select" formControlName="gender">
+        <option value="m" selected>Male</option>
+        <option value="f">Female</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label for="age" class="form-label">Age</label>
+      <input type="number" class="form-control" id="age" formControlName="age">
+    </div>
+    <div class="col-md-4">
+      <label for="date" class="form-label">Date (dd/MM/yyyy)</label>
+      <input type="text" class="form-control" id="date" formControlName="date">
+    </div>
+    <div class="col-md-4">
+      <label for="gender" class="form-label">Preferrence</label>
+      <select id="gender" class="form-select" formControlName="prefTime">
+        <option value="early">EarlyMorning</option>
+        <option value="morning">Morning</option>
+        <option value="noon">Noon</option>
+        <option value="afternoon">After Noon</option>
+        <option value="evening">evening</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="durationHour" class="form-label">Duration Hour</label>
+      <select id="durationHour" class="form-select" formControlName="durationHour">
+        <option value="1" selected>One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+        <option value="4">Four</option>
+        <option value="5">Five</option>
+        <option value="6">Six</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="gender" class="form-label">Duration Minute</label>
+      <select id="durationMinute" class="form-select" formControlName="durationMinute">
+        <option value="0" selected>Sharp</option>
+        <option value="15">15</option>
+        <option value="30">35</option>
+        <option value="45">45</option>
+      </select>
+    </div>
+    <div class="col-md-12 offset-md-4 ">
+      <button  type="submit" class="btn btn-primary float-right">
+            Book
+        </button>
+    </div>
+  </form>
+</div>
+</div>

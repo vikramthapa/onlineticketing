@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
+import lombok.Data;
 import javax.persistence.*;
 import java.util.Date;
 
@@ -13,7 +14,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Entity
 @Table
-public class Payment {
+public @Data class Payment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,6 +33,6 @@ public class Payment {
 
     private Integer minute;
 
-    private Double AmountPayable;
+    private Double amountPayable;
 
 }
